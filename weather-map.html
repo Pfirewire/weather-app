@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Weather Map Project</title>
+    <link rel="icon" type="image/x-icon" href="img/megamanicon.png">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.9.2/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.9.2/mapbox-gl.css' rel='stylesheet' />
+    <script type="text/javascript" src="js/keys.js"></script>
+    <style>
+        body {
+            background-color: #1b4056;
+        }
+    </style>
+    <script src="js/jquery-3.6.0.js"></script>
+
+</head>
+<body>
+
+<!--Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark text-light sticky-top">
+    <div class="container-fluid">
+        <h2 id="header-title" class="nav-item mx-3">WeatherMap</h2>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span id="collapse-btn">Current Weather</span>
+        </button>
+        <div class="collapse navbar-collapse me-auto mb-2 mb-lg-0" id="navbarNav">
+            <ul class="navbar-nav">
+                <li id="current-icon" class="nav-item">
+                    <h3><i class="bi bi-sun"></i></h3>
+                </li>
+                <li class="nav-item m-auto mx-2">
+                    <h4 id="current-weather-description" class="navbar-text">Sunny</h4>
+                </li>
+                <li class="nav-item m-auto mx-2">
+                    <h4 id="current-temp" class="navbar-text">94 F</h4>
+                </li>
+                <li class="nav-item m-auto mx-2 text-muted">
+                    <h4 id="current-feels-like" class="navbar-text">Feels Like 97 F</h4>
+                </li>
+                <li class="nav-item m-auto mx-2">
+                    <h4 id="current-humidity" class="navbar-text">10% Humidity</h4>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!--Body-->
+<div id="body-container" class="container-fluid mt-3">
+    <div class="row gx-3 flex-row-reverse">
+<!--        Map-->
+        <div class="col-12 col-lg-9">
+            <div id="map" style="height: 500px;"></div>
+        </div>
+<!--        Search Bar and Tomorrow Card-->
+        <div class="col-12 col-lg-3 container d-flex flex-column">
+            <input id="input-address" placeholder="Address" autocomplete="off">
+            <button id="address-btn" class="btn btn-info mt-1 mb-3">Check Weather</button>
+            <div id="upcoming-tomorrow-card" class="card bg-light text-center flex-grow-1"></div>
+        </div>
+    </div>
+<!--    Upcoming Cards-->
+    <div class="row gx-2 pt-2">
+        <div class="col-6 col-lg-3">
+            <div id="upcoming-2-card" class="card bg-dark text-light text-center mb-2"></div>
+        </div>
+        <div class="col-6 col-lg-3">
+            <div id="upcoming-3-card" class="card bg-dark text-light text-center mb-2"></div>
+        </div>
+        <div class="col-6 col-lg-3">
+            <div id="upcoming-4-card" class="card bg-dark text-light text-center mb-2"></div>
+        </div>
+        <div class="col-6 col-lg-3">
+            <div id="upcoming-5-card" class="card bg-dark text-light text-center mb-2"></div>
+        </div>
+    </div>
+</div>
+
+
+<!--       Scripts       -->
+<!-- jQuery -->
+<!--<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>-->
+<!-- Bootstrap JS Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<script src="js/weather-app.js"></script>
+</body>
+</html>
